@@ -22,14 +22,14 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             val navController = rememberNavController()
-            NavHost(navController =  navController, startDestination = Routes.screenA, builder = {
+            NavHost(navController =  navController, startDestination = Routes.screenA){
                 composable(Routes.screenA,){
                     ScreenA(navController)
                 }
                 composable(Routes.screenB,){
                     ScreenB(navController)
                 }
-            })
+            }
         }
     }
 }
