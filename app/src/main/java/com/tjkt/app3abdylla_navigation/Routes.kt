@@ -1,6 +1,9 @@
 package com.tjkt.app3abdylla_navigation
 
 object Routes {
-    var screenA = "screen_A"
-    var screenB = "screen_B"
-}
+    const val screenA = "screen_A"
+    const val screenB = "detail/{id}"
+
+    fun detailRoute(id: Int): String {
+        return "detail/$id"
+    }}
