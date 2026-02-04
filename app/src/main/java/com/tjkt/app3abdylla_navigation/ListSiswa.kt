@@ -30,27 +30,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-
-//@Composable
-//fun ListSiswa(navController: NavController){
-//    Column(
-//        Modifier
-//            .fillMaxSize(),
-//        horizontalAlignment = Alignment.CenterHorizontally,
-//        verticalArrangement = Arrangement.Center
-//    ) {
-//        Text(text = "Screen A")
-//        Button(
-//            onClick = {
-//                navController.navigate(Routes.screenB)
-//            }
-//        ) {
-//            Text(text = " Go to screen B")
-//        }
-//    }
-//}
-
-
 @Composable
 fun LazyColumnListSiswa(navController: NavController) {
     val myList = getAllSiswaData()
@@ -58,7 +37,6 @@ fun LazyColumnListSiswa(navController: NavController) {
     Column(Modifier.fillMaxSize().statusBarsPadding().padding(16.dp)) {
         Text(text = "Daftar Siswa", fontSize = 16.sp, fontWeight = FontWeight.Bold)
         Spacer(Modifier.height(16.dp))
-
         LazyColumn {
             itemsIndexed(myList) { index, item ->
                 SiswaItem(item = item,
@@ -75,7 +53,6 @@ fun LazyColumnListSiswa(navController: NavController) {
         }
     }
 }
-
 @Composable
 fun SiswaItem(item: SiswaData,onClick: () -> Unit) {
     Row(
@@ -102,3 +79,24 @@ fun SiswaItem(item: SiswaData,onClick: () -> Unit) {
         }
     }
 }
+
+
+
+//@Composable
+//fun ListSiswa(navController: NavController){
+//    Column(
+//        Modifier
+//            .fillMaxSize(),
+//        horizontalAlignment = Alignment.CenterHorizontally,
+//        verticalArrangement = Arrangement.Center
+//    ) {
+//        Text(text = "Screen A")
+//        Button(
+//            onClick = {
+//                navController.navigate(Routes.screenB)
+//            }
+//        ) {
+//            Text(text = " Go to screen B")
+//        }
+//    }
+//}
