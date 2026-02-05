@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -22,10 +21,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
 
 @Composable
-fun DetailSiswa(id: Int?, navController: NavController){
+fun DetailSiswa2(id: Int?){
     val siswa = getAllSiswaData().find { it.id == id }
     siswa?.let {
         Column(
@@ -58,30 +56,24 @@ fun DetailSiswa(id: Int?, navController: NavController){
                             .clip(CircleShape)
                             .align(Alignment.CenterHorizontally)
                     )
-                    InfoRow("Nama", it.namaSiswa)
-                    InfoRow("Kelas", it.kelasSiswa)
-                    InfoRow("Alamat", it.alamat)
-                    InfoRow("Hobi", it.hobi)
-                    InfoRow("Umur", it.umur.toString())
-                    InfoRow("Nomor HP", it.noHp)
-                    InfoRow("Email", it.email)
+                    InfoRow2("Nama", it.namaSiswa)
+                    InfoRow2("Kelas", it.kelasSiswa)
+                    InfoRow2("Alamat", it.alamat)
+                    InfoRow2("Hobi", it.hobi)
+                    InfoRow2("Umur", it.umur.toString())
+
                 }
             }
-            Button(
-                onClick = {
-                    navController.popBackStack()
-                },
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text("Kembali")
-            }
         }
+
     }?: run {
         Text("Data siswa tidak ditemukan")
     }
+
 }
+
 @Composable
-fun InfoRow(label: String, value: String) {
+fun InfoRow2(label: String, value: String) {
     Row(
         modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween

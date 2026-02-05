@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
                     )
                 ) { backStackEntry ->
                     val id = backStackEntry.arguments?.getInt("id")
-                    DetailSiswa(id)
+                    DetailSiswa(id, navController)
                 }
             }
         }
